@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifolio</title>
+    <title>NotasToDo</title>
+    <link rel="stylesheet" href="paginaSRC/style.css">
 </head>
 <body>
-    
+    <header class="cabecalho">
+        <img src="paginaSRC/logo.png" alt="imagem" class="cabecalho-logo">
+        <p class="cabecalho-titulo">NotasToDo</p>
+        <a href="paginaSRC/login.html" class="cabecalho-sair">Sair</a>
+    </header>
+    <main class="geral">
+        <section class="geral-menu">
+            <h2>Minhas Notas</h2>
+            <ul id="notesList">
+                <!-- As notas criadas aparecerão aqui -->
+            </ul>
+            <button id="toggleCreate" class="toggle-button">Criar Nova Nota</button>
+            <button id="toggleView" class="toggle-button" style="display:none;">Ver Nota</button>
+        </section>
+
+        <section class="geral-criar" id="createSection" style="display:none;">
+            <h2>Criar Nota</h2>
+            <textarea id="noteInput" placeholder="Escreva sua nota aqui..."></textarea>
+            <button onclick="addNote()">Salvar Nota</button>
+        </section>
+
+        <section class="geral-ver" id="viewSection" style="display:none;">
+            <h2>Nota</h2>
+            <p id="noteContent">Selecione uma nota para visualizar.</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-criador">Criado por Você</div>
+        <img src="paginaSRC/logo.png" alt="logo" class="footer-logo">
+    </footer>
+    <script src="paginaSRC/script.js"></script>
 </body>
 </html>
