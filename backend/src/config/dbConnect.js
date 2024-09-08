@@ -2,9 +2,19 @@ import mongoose from "mongoose";
 import "dotenv/config"
 
 async function conectaNaDatabase() {
-    mongoose.connect(process.env.DB_CONNECTION_STRING);
+    mongoose.connect(process.env.DB_PASS);
 
-    return mongoose.connection;
+    const conexao = mongoose.connection;
+
+    conexao.on("error", (erro) => {
+        console.error("erro de conexão", erro);
+    })
+    
+    conexao.once("open", () => {
+        console.log ("Conectado na database!");
+    })
 };
 
-export default conectaNaDatabase;
+conectaNaDatabase();
+
+export default mongoose;
