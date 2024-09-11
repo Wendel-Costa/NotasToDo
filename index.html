@@ -16,6 +16,7 @@
         <section class="geral-menu">
             <h2>Minhas Notas</h2>
             <ul id="notesList">
+                <p class="carregando">Carregando...</p>
                 <!-- As notas criadas aparecerão aqui -->
             </ul>
             <button id="toggleCreate" class="toggle-button">Criar Nova Nota</button>
@@ -25,7 +26,7 @@
         <section class="geral-criar" id="createSection" style="display:none;">
             <h2>Criar Nota</h2>
             <textarea id="noteInput" placeholder="Escreva sua nota aqui..."></textarea>
-            <button onclick="addNote()">Salvar Nota</button>
+            <button id="adicionarNota">Salvar Nota</button>
         </section>
 
         <section class="geral-ver" id="viewSection" style="display:none;">
@@ -37,6 +38,7 @@
         <div class="footer-criador">Criado por Você</div>
         <img src="paginaSRC/logo.png" alt="logo" class="footer-logo">
     </footer>
+    <script src="paginaSRC/conexaoAPI.js"></script>
     <script src="paginaSRC/script.js"></script>
 </body>
 </html>
